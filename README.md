@@ -1,6 +1,7 @@
 # What is this?
 
-Melancholy, a RE (Reverse Engineering) tool built entirely upon C++ and Rust\n
+Melancholy, a RE (Reverse Engineering) tool built entirely upon C++ and Rust
+
 Why C++ and Rust specifically and not just one of them? Rust's ecosystem is not comparable to C++'s, therefore i arrived to a single conclusion...
 "*Just make it in both languages.*"
 
