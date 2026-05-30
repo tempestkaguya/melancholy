@@ -39,4 +39,4 @@ Of course you can, heck I will gladly accept your help for this project, you can
 
 # Is AI allowed?
 
-AI is stricly forbidden, the only exception is for comment generation.
+AI is strictly forbidden, the only exception is for comment generation.
