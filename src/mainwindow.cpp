@@ -13,6 +13,7 @@
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QLineEdit>
+#include <qnamespace.h>
 
 MainWindow::MainWindow(QWidget *parent) 
     : QMainWindow(parent) 
@@ -63,21 +64,41 @@ MainWindow::MainWindow(QWidget *parent)
     tablay->addWidget(titleLabel);
 
     QHBoxLayout *searchRow = new QHBoxLayout(filePage);
-    QLineEdit *pathBox = new QLineEdit();
+    pathBox = new QLineEdit(this);
     pathBox->setPlaceholderText("No file chosen...");
-    pathBox->setReadOnly(true);
+    pathBox->setReadOnly(true); 
 
-    searchRow->addWidget(pathBox);
+    searchRow->addWidget(pathBox); 
     tablay->addLayout(searchRow);
+
+    QPushButton *select = new QPushButton("Select file");
+    tablay->addWidget(select, 0, Qt::AlignRight); 
+
+    connect(select, &QPushButton::clicked, this, &MainWindow::selectFile);
+
     tablay->addStretch();
 
-    QPushButton *button = new QPushButton("Open");
-    tablay->addWidget(button, 0, Qt::AlignRight);   
+    QPushButton *button = new QPushButton();
+    button->setText("Open");
 
+    tablay->addWidget(button, 0, Qt::AlignRight | Qt::AlignBottom);   
     tabWidget->addTab(filePage, "Open File");
 
     QPushButton *about = new QPushButton("About us", this);
     layout->addWidget(about, 0);
+}
+
+void MainWindow::selectFile() {
+    QString filePath = QFileDialog::getOpenFileName(
+        this, 
+        "Open Binary File", 
+        QDir::homePath(), 
+        "All Files (*);;ELF Binaries (*)"
+    );
+
+    if (!filePath.isEmpty()) {
+        pathBox->setText(filePath);
+    }
 }
 
 MainWindow::~MainWindow() {}

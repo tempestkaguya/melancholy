@@ -2,3 +2,4 @@ cat > .gitignore << 'EOF'
 build/
 backend/target/
 EOF
+errors/

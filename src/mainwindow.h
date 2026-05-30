@@ -10,7 +10,10 @@ class MainWindow : public QMainWindow {
         MainWindow(QWidget *parent = nullptr);
 
         ~MainWindow();
+    private slots:
+        void selectFile();    
     private:
+        class QLineEdit *pathBox;
 };
 
 #endif
