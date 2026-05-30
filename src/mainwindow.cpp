@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
     QVBoxLayout *layout = new QVBoxLayout(widget);
     this->setCentralWidget(widget);
 
-    QPixmap pixmap("../images/tear.png");
+    QPixmap pixmap("../src/images/tear.png");
 
     QLabel *label = new QLabel(this);
 

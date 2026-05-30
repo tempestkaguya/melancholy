@@ -1,5 +1,4 @@
 cat > .gitignore << 'EOF'
 build/
-.vscode/
 backend/target/
 EOF

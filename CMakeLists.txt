@@ -18,12 +18,19 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(Corrosion)
 
-corrosion_import_crate(MANIFEST_PATH backend/Cargo.toml)
+corrosion_import_crate(MANIFEST_PATH src/core/Cargo.toml)
 
-add_executable(melancholy src/main.cpp)
+file(GLOB_RECURSE ALL_SOURCES 
+    "src/*.cpp"
+    "src/*.h"
+)
+
+add_executable(melancholy ${ALL_SOURCES})
+
+target_include_directories(melancholy PRIVATE src)
 
 target_link_libraries(melancholy 
     PRIVATE 
-        backend
+        core
         Qt6::Widgets
 )
