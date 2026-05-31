@@ -1,5 +1,9 @@
 cat > .gitignore << 'EOF'
 build/
-backend/target/
+src/core/target/
 EOF
 errors/
+
+# Added by cargo
+
+/target
