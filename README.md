@@ -32,11 +32,3 @@ Or you could just build it automatically by pressing F7
 
 * **ELF (Linux):** Current primary focus and active development goal
 * **Mach-O (MacOS):** Planned for development in the future
-
-# Can I contribute?
-
-Of course you can, heck I will gladly accept your help for this project, you can improve this README or improve the code from this project
-
-# Is AI allowed?
-
-AI is strictly forbidden, the only exception is for comment generation.
