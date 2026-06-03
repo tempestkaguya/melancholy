@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QVBoxLayout>
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -13,6 +14,8 @@ class MainWindow : public QMainWindow {
     private slots:
         void selectFile();    
     private:
+        void windowProperties();
+        void welcomeHeader(QVBoxLayout* mainLayout);
         class QLineEdit *pathBox;
 };
 

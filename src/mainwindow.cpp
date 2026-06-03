@@ -18,42 +18,17 @@
 MainWindow::MainWindow(QWidget *parent) 
     : QMainWindow(parent) 
 {
-    this->setWindowTitle("Open your file");
-    this->resize(450, 600);
+    windowProperties();
 
     QWidget *widget = new QWidget(this);
-    QVBoxLayout *layout = new QVBoxLayout(widget);
+    QVBoxLayout *mainLayout = new QVBoxLayout(widget);
     this->setCentralWidget(widget);
 
-    QPixmap pixmap("../src/images/tear.png");
-
-    QLabel *label = new QLabel(this);
-
-    if (pixmap.isNull())
-    {
-        label->setText("Failed to load the img");
-        label->setGeometry(10, 10, 200, 30);
-    }
-    else
-    {
-        label->setPixmap(pixmap);
-
-        label->setFixedSize(100, 150);
-        label->setScaledContents(true);
-
-        layout->addWidget(label, 0, Qt::AlignHCenter | Qt::AlignTop);
-    }
-
-    QLabel *text = new QLabel(this);
-    text->setText("Welcome to Melancholy! Click 'About us' for further information!");
-    text->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
-
-    layout->addWidget(text);
-    // layout->addStretch();
-
+    welcomeHeader(mainLayout);
+    
     QTabWidget *tabWidget = new QTabWidget(this);
-    layout->setAlignment(Qt::AlignCenter);
-    layout->addWidget(tabWidget);
+    mainLayout->setAlignment(Qt::AlignCenter);
+    mainLayout->addWidget(tabWidget);
 
     QWidget *filePage = new QWidget(this);
     QVBoxLayout *tablay = new QVBoxLayout(filePage);
@@ -85,7 +60,40 @@ MainWindow::MainWindow(QWidget *parent)
     tabWidget->addTab(filePage, "Open File");
 
     QPushButton *about = new QPushButton("About us", this);
-    layout->addWidget(about, 0);
+    mainLayout->addWidget(about, 0);
+}
+
+void MainWindow::welcomeHeader(QVBoxLayout* mainLayout) {
+    QPixmap pixmap("../src/images/tear.png");
+
+    QLabel *label = new QLabel(this);
+
+    if (pixmap.isNull())
+    {
+        label->setText("Failed to load the img");
+        label->setGeometry(10, 10, 200, 30);
+    }
+    else
+    {
+        label->setPixmap(pixmap);
+
+        label->setFixedSize(100, 150);
+        label->setScaledContents(true);
+
+        mainLayout->addWidget(label, 0, Qt::AlignHCenter | Qt::AlignTop);
+    }
+
+    QLabel *text = new QLabel(this);
+    text->setText("Welcome to Melancholy! Click 'About us' for further information!");
+    text->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
+
+    mainLayout->addWidget(text);
+    // layout->addStretch();
+}
+
+void MainWindow::windowProperties() {
+    this->setWindowTitle("Open your file");
+    this->resize(450, 600);
 }
 
 void MainWindow::selectFile() {
