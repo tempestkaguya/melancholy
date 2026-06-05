@@ -32,3 +32,4 @@ Or you could just build it automatically by pressing F7
 
 * **ELF (Linux):** Current primary focus and active development goal
 * **Mach-O (MacOS):** Planned for development in the future
+* **PE (Windows):** The last one, because it's horrible
