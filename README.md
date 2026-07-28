@@ -1,22 +1,22 @@
 # What is this?
 
-Melancholy, a Reverse Engineering tool built entirely upon C++ and Rust
+Melancholy, a Reverse Engineering tool built with C++ and Rust
 
-Why C++ and Rust specifically and not just one of them? Rust's ecosystem is not comparable to C++'s, therefore i arrived to a single conclusion...
+Why use both C++ and Rust instead of just one? The Rust ecosystem isn't yet as mature as the C++ ecosystem, therefore I arrived at a single conclusion...
 "*Just make it in both languages.*"
 
-# What is gonna be the stack?
+# What is the stack?
 
-* **C++** Powers the *beatiful* UI, hex view and disassambler.
-* **Rust** Handles the core logic, such as the binary parsing, Control Flow Graph (CFG) and heavy backend data processing.
+* **C++** Powers the *beautiful* UI, hex view, and disassembler.
+* **Rust** Handles the core logic, such as the binary parsing, Control Flow Graph (CFG), and heavy backend data processing.
 
 # Libraries
 
-I will be using Qt for C++ because I believe it's the best library for heavy-desktop app work
+* **Qt (C++):** Chosen because it is the most robust library for heavy desktop app work
 
 # How to run this?
 
-I kept compilations as simple as possible via a shell script:
+Compilation is simplified via a shell script. You can also press F7 to build the project automatically.
 
 ```bash
 # Build the project automatically
@@ -26,10 +26,8 @@ I kept compilations as simple as possible via a shell script:
 ./run.sh r
 ```
 
-Or you could just build it automatically by pressing F7
-
-# What formats are or will be supported?
+# What formats are currently supported or planned?
 
 * **ELF (Linux):** Current primary focus and active development goal
-* **Mach-O (MacOS):** Planned for development in the future
-* **PE (Windows):** The last one, because it's horrible
+* **Mach-O (macOS):** Planned for development in the future
+* **PE (Windows):** Planned for last due to its complexity
