@@ -8,15 +8,11 @@ class MainWindow : public QMainWindow {
     Q_OBJECT
     
     public:
-        MainWindow(QWidget *parent = nullptr);
+        explicit MainWindow(QWidget *parent = nullptr);
 
-        ~MainWindow();
-    private slots:
-        void selectFile();    
-    private:
-        void windowProperties();
-        void welcomeHeader(QVBoxLayout* mainLayout);
-        class QLineEdit *pathBox;
+        //~MainWindow();
+    protected:
+        void closeEvent(QCloseEvent *event) override;
 };
 
 #endif

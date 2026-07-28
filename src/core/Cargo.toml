@@ -4,7 +4,14 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-tokio = "1.52.3"
+goblin = "0.10.7"
+cxx = "1.0"
+presenceforge = "0.2.1"
+discord-rich-presence = "1.1.0"
+
 
 [lib]
 crate-type = ["staticlib"]
+
+[build-dependencies]
+cxx-build = "1.0"

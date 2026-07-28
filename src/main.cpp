@@ -1,20 +1,19 @@
 #include <QApplication>
 #include <QtGlobal>
 #include "mainwindow.h"
+#include "widgets/initializing.h"
+#include "widgets/close.h"
 
 #ifndef Q_OS_LINUX
-    #include <iostream>
-    #include <cstdlib>
+    #error "Melancholy is only supported on Linux."
 #endif
 
 int main(int argc, char *argv[])
 {
-    #ifndef Q_OS_LINUX
-        std::clog << "Melancholy is only supported on Linux." << std::endl;
-        std::exit(0);
-    #endif
-
     QApplication app(argc, argv);
+
+    //Initializing window;
+    //window.show();
 
     MainWindow window;
     window.show();

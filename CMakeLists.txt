@@ -23,6 +23,8 @@ corrosion_import_crate(MANIFEST_PATH src/core/Cargo.toml)
 file(GLOB_RECURSE ALL_SOURCES 
     "src/*.cpp"
     "src/*.h"
+    "widgets/*.h"
+    "widgets/*.cpp"
 )
 
 add_executable(melancholy ${ALL_SOURCES})
