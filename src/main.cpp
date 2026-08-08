@@ -3,17 +3,12 @@
 #include "mainwindow.h"
 #include "widgets/initializing.h"
 #include "widgets/close.h"
-#include <sys/mman.h>
-#include <sys/mman.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <system_error>
-#include <unistd.h>
 
 #ifndef Q_OS_LINUX
     #error "Melancholy is only supported on Linux."
 #endif
 
+/* straight fucking garbage, memory leaks expected
 template <typename T>
 struct ShmHandle {
     T* data;
@@ -41,7 +36,7 @@ extern ShmHandle<T> create_smipc(const char* os_id, size_t size) {
 
     T* typed_ptr = static_cast<T*>(raw_ptr);
     return ShmHandle<T>{ typed_ptr, fd, size };
-}
+}*/
 
 int main(int argc, char *argv[])
 {
