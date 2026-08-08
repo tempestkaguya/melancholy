@@ -1,13 +1,12 @@
+pub mod components;
+pub mod status;
+
 use discord_rich_presence::{activity, DiscordIpc, DiscordIpcClient};
 use goblin::{error, Object};
 use std::fs;
 
-#[cxx::bridge]
-mod ffi {
-    extern "Rust" {
-        fn parse(path: &String) -> Result<()>;
-    }
-}
+use status::Errors;
+use components::discord_activity::activity;
 
 fn parse(path: &String) -> error::Result<()> {
     let buffer = fs::read(path)?;
@@ -20,20 +19,11 @@ fn parse(path: &String) -> error::Result<()> {
     Ok(())
 }
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let mut client = DiscordIpcClient::new("1529606923530277017");
+#[tokio::main]
+async fn main() {
+    if let Err(_) = activity("no file opened yet", "Reverse engineering with Melancholy!").await {
+        Errors::FailConnection;
+    };
+
     
-    client.connect()?; 
-    let payload = activity::Activity::new()
-        .state("no file opened yet")
-        .details("Reverse engineering with Melancholy!")
-        .assets(activity::Assets::new()
-            .large_image("test")
-            .large_text("epic")
-    );
-        
-    client.set_activity(payload)?;
-    loop {
-        std::thread::sleep(std::time::Duration::from_secs(10));
-    }
 }
