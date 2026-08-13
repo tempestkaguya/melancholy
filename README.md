@@ -26,8 +26,6 @@ Compilation is simplified via a shell script. You can also press F7 to build the
 ./run.sh r
 ```
 
-# What formats are currently supported or planned?
+# Contribute
 
-* **ELF (Linux):** Current primary focus and active development goal
-* **Mach-O (macOS):** Planned for development in the future
-* **PE (Windows):** Planned for last due to its complexity
+If you would like to contribute to Melancholy, please take a look at the (Contributing Policy)[CONTRIBUTING.md]
