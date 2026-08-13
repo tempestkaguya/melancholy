@@ -28,4 +28,4 @@ Compilation is simplified via a shell script. You can also press F7 to build the
 
 # Contribute
 
-If you would like to contribute to Melancholy, please take a look at the (Contributing Policy)[CONTRIBUTING.md]
+If you would like to contribute to Melancholy, please take a look at our [Contributing Policy](CONTRIBUTING.md)
