@@ -8,6 +8,13 @@ First of all, make sure to run this command inside your terminal: `make` or `mak
 
 ## Configuration commands
 
-`make run` Launches melancholy inside the docker container
-`make debug` Starts a bash shell inside the container for debugging
-`make clean` Removes unused docker data and frees up disk space
+```bash
+# Launches melancholy inside the docker container
+make run
+
+# Starts a bash shell inside the container for debugging
+make debug
+
+# Removes unused docker data and frees up disk space
+make clean
+```
