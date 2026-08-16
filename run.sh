@@ -8,5 +8,5 @@ cmake ..
 cmake --build .
 
 if [ "$1" = "r" ]; then
-   ./vision
+   ./melancholy
 fi
